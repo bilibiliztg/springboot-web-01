@@ -8,6 +8,7 @@ public class TestGit {
     void test01(){
         System.out.println("第二次提交");
         System.out.println("第三次提交");
+        System.out.println("hot-fix修改");
     }
 
 }
