@@ -1,0 +1,53 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+  datasource:
+    url: "jdbc:mysql://47.98.62.69:3306/mybatis?useUnicode=true&characterEncoding=utf8"
+    username: root
+    password: Zhangtiangen888
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: admin
+        reset-enable: false
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+      aop-patterns: com.atguigu.boot.*
+      filters: stat,wall
+      filter:
+        stat:
+          enabled: true
+          slow-sql-millis: 1000
+          log-slow-sql: true
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false
+
+  redis:
+    url: redis://@47.98.62.69:6379
+    client-type: jedis
+
+
+#mybatis:
+##  config-location: classpath:mybatis/mybatis-config.xml
+#  mapper-locations: classpath:mybatis/mapper/*.xml
+#  configuration:
+#    map-underscore-to-camel-case: true
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mybatis/mapper/*.xml
+#健康管理，监控指标
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: '*'
