@@ -11,6 +11,7 @@ public class TestGit {
         System.out.println("hot-fix修改");
         System.out.println("master分支修改");
         System.out.println("hot-fix分支再次修改");
+        System.out.println("Github修改");
     }
 
 }
